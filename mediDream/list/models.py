@@ -1,23 +1,19 @@
 from django.db import models
+from accounts.models import MEMBERS
+from django.utils import timezone
 
 # Create your models here.
 
-class Search_History(models.Model):
-    h_id = models.OneToOneField('accounts.Members', models.DO_NOTHING, db_column='H_ID', primary_key = True, to_field = 'm_id')
-    h_date = models.DateField(db_column = 'H_DATE')
-    h_druginfo = models.ForeignKey('druginfo', models.DO_NOTHING, db_column = 'H_DRUGINFO', to_field = 'd_info')
+class pillInfo(models.Model):
+    pill_name=models.CharField(max_length=50)       # 이름
+    pill_effect=models.CharField(max_length=250)    # 효과
+    pill_usage=models.CharField(max_length=250)     # 용법
+    pill_caution=models.CharField(max_length=255)   # 주의사항
+    pill_color=models.CharField(max_length=50)      # 색깔
+    pill_shape=models.CharField(max_length=50)      # 모양
+    pill_engrave=models.CharField(max_length=50)    # 각인        
 
-    # class Meta:
-    #     managed = False
-    #     db_table = 'search_history'
-
-class DRUGINFO(models.Model):
-    d_drugname = models.CharField(db_column = 'd_drugname', primary_key = True, max_length = 250)
-    d_effect = models.CharField(db_column = 'd_effect', max_length = 250)
-    d_usage = models.CharField(db_column = 'd_usage', max_length = 250)
-    d_volume = models.CharField(db_column = 'd_volume', max_length = 250)
-    d_info = models.CharField(db_column = ' d_info', unique = True, max_length = 250)
-    
-    # class Meta:
-    #     managed = False
-    #     db_table = 'druginfo'
+class search(models.Model):
+    mediDream_id=models.ForeignKey(MEMBERS,on_delete=models.PROTECT)    # 유저 아이디
+    pill=models.ForeignKey(pillInfo,on_delete=models.PROTECT)           # 약
+    date=models.DateTimeField(default=timezone.now)                     # 시간, default 설정

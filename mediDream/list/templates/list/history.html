@@ -23,12 +23,13 @@
         <section>
             <div>검색 기록 표?가 들어갈 div 태그</div>
             <div>아래의 내용이 탬플릿 언어 for문으로 반복되서 들어갈것</div>
-            <div>
-                <span><img></span>
-                <span>No.</span>
-                <span>Name</span>
-                <span>Date</span>
-            </div>
+            {% for item in test%}
+                <div>
+                    <span>User = {{item.mediDream_id.m_id}}</span>
+                    <span><a href="http://127.0.0.1:8000/list/info/{{item.pill.pill_name}}">Pill = {{item.pill.pill_name}}</a></span>
+                    <span>Date = {{item.date}}</span>
+                </div>
+            {% endfor %}
         </section>
     </p>
     <p>
