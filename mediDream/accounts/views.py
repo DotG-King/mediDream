@@ -24,7 +24,7 @@ def login(request) :
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:   
             auth.login(request,user)
-            return redirect('index') #로그인이 성공하면 search.urls로 넘어감
+            return redirect('list') #로그인이 성공하면 search.urls로 넘어감
             
         else:
             return render(request, 'accounts/login.html', {'error':'아이디 or 비밀번호 오류입니다'}) #에러코드 출력하면서 login 페이지 보여줌

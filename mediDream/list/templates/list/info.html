@@ -5,5 +5,20 @@
 </head>
 <body>
     <div>약 정보 페이지 테스트</div>
+    <div>
+        {% for item in test %}
+        <div>
+        <span>알약 이름 : {{ item.pill_name }}</span>
+        <span>알약 효능 : {{ item.pill_effect }}</span>
+        <span>알약 용법 : {{ item.pill_usage }}</span>
+        <span>알약 주의사항 : {{ item.pill_caution }}</span>
+        </div>
+        <div>
+        <span>알약 색깔 : {{ item.pill_color }}</span>
+        <span>알약 모양 : {{ item.pill_shape }}</span>
+        <span>알약 각인 : {{ item.pill_engrave }}</span>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
