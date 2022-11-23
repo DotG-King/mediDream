@@ -1,0 +1,12 @@
+{% extends 'search/index.html' %}
+
+{% block content %}
+
+    <h2>이미지 업로드</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">업로드</button>
+    </form>
+
+{% endblock %}
