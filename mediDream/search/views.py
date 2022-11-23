@@ -16,7 +16,7 @@ def image_list(request):
 
 def upload_image(request):
     if request.method == 'POST':
-        form = UploadForm(request.POST,request.FILES)
+        form = UploadForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('image_list')
