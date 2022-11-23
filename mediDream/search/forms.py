@@ -4,4 +4,9 @@ from list.models import search
 class UploadForm(forms.ModelForm):
     class Meta:
         model = search
-        fields = {'img'}
+        fields = [
+                'mediDream_id',
+                'pill',
+                'date',
+                'img'
+                ]

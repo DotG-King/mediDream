@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
+from django.utils import timezone
 from .forms import UploadForm
 
 # Create your views here.
@@ -13,6 +13,22 @@ def index(request):
 
 def image_list(request):
     return render(request,'search/list.html', {})
+
+# def upload_image(request):
+#     if request.method == 'POST':
+#         form = UploadForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             new = form.save(commit=False)
+#             new = 
+#             new.pill='Unknown'
+#             new.date=timezone.now()
+#             new.save()
+#             return redirect('image_list',new)
+#     else:
+#         form = UploadForm()
+#     return render(request,'search/upload.html',{
+#         'form': form
+#     })
 
 def upload_image(request):
     if request.method == 'POST':

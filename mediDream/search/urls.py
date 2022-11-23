@@ -5,8 +5,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns=[
-    path('',views.index,name='index'),
-    path('upload/',views.upload_image,name='upload_image'),
+    #path('',views.index,name='search'),
+    path('upload/',views.upload_image,name='search'),
     path('list/',views.image_list,name='image_list'),
 ]
 
