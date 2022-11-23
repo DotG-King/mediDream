@@ -1,0 +1,21 @@
+{% block content %}
+<div class="container">
+    <h1>로그인</h>
+
+    <form method="POST" action="{%url 'login'%}">
+        {% csrf_token %} <!--보안을 위해 쓰는 난수 발생기-->
+            아이디:
+            <br>
+            <input name="username"type="text">
+            <br>
+            비밀번호:
+            <br>
+            <input name="password" type="password">
+            <br><br>
+            <input type="submit" class="btn btn=primary" value="로그인">
+            {% comment %} <a href = "{%url 'signup' %}> 회원가입 </a>  {% endcomment %} 
+            
+        </form>
+    </div>
+    {% endblock %}
+<!--아이디 비번 실패시 에러메세지 출력/ 회원가입 버튼 만들기-->
