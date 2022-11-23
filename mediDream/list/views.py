@@ -14,7 +14,9 @@ def list_view(request):
     return render(request, 'list/history.html', {'test':test})
 
 def pill_info(request, word):
-    return HttpResponse('약 정보 페이지 입니다.\n list_view에서 {0}약을 누르고 이 페이지로 넘어왔습니다.'.format(word))
+    param={'pname':word}
+    # return HttpResponse('약 정보 페이지 입니다.\n list_view에서 {0}약을 누르고 이 페이지로 넘어왔습니다.'.format(word))
+    return render(request, 'list/info.html', param)
 
 # def search_history(request) :
 #     user=request.user

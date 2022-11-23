@@ -26,7 +26,7 @@
             {% for item in test%}
                 <div>
                     <span>User = {{item.mediDream_id.m_id}}</span>
-                    <span><a href="http://127.0.0.1:8000/list/info/{{item.pill.pill_name}}">Pill = {{item.pill.pill_name}}</a></span>
+                    <span><a href="/list/info/{{item.pill.pill_name}}">Pill = {{item.pill.pill_name}}</a></span>
                     <span>Date = {{item.date}}</span>
                 </div>
             {% endfor %}
