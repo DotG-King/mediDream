@@ -25,8 +25,8 @@
             <div>아래의 내용이 탬플릿 언어 for문으로 반복되서 들어갈것</div>
             {% for item in test%}
                 <div>
-                    <span>User = {{item.mediDream_id.m_id}}</span>
-                    <span><a href="http://127.0.0.1:8000/list/info/{{item.pill.pill_name}}">Pill = {{item.pill.pill_name}}</a></span>
+                    <span>User = {{item.mediDream_id.username}}</span>
+                    <span><a href="/list/info/{{item.pill.pill_name}}">Pill = {{item.pill.pill_name}}</a></span>
                     <span>Date = {{item.date}}</span>
                 </div>
             {% endfor %}
@@ -35,7 +35,7 @@
     <p>
         <footer>
             <div>
-                <a href="logout">로그아웃</a>
+                <a href="/logout">로그아웃</a>
             </div>
         </footer>
     </p>

@@ -1,22 +1,59 @@
+{% load static %}
+{% block contents %}
 
-{% block content %}
-<div class="container">
-    <h3>회원가입</h>
-
-    <form method="POST" action="{%url 'signup'%}">
-        {% csrf_token %}
-            아이디:<br>
-            <input name="username"type="text">
-            <br>
-            비밀번호:
-            <br>
-            <input name="password1" type="password">
-            비밀번호 확인:
-            <br>
-            <input name="password2" type="password">
-            <br>
-            <input type="submit" class="btn btn=primary" value="회원가입 하기">
-        </form>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width = device=width", initial-scale = "1">
+    <title>Medidream</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <style type="text/css">
+        .jumbotron {
+            text-shadow: skyblue 0.2em 0.2em 0.2em;
+            color: green;
+        }
+    </style>
+    <div class="container">
+        <div class = "jumbotron">
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h3>Medidream 회원가입</h>
+                </div>
+</div>
+<div class="row mt-5">
+<div class="col-12">  
+    <div class="col-4">
+        
+        <form method="POST" action="{%url 'signup'%}">
+            {% csrf_token %}
+            <div class="form-group">
+                
+                <label for="username" class="form-label">ID</label>
+                <input name="username" type="text" class="form-control" id="username" placeholder="사용자 ID">
+                <div class="form-group">
+            </div>        
+            <div class="form-group >
+                <label for="password" class="form-label">password</label>
+                <input name="password1" type="password" class="form-control" id="username" placeholder="비밀번호">
+                <br>
+                <label for="password" class="form-label">password check</label>
+                <input name="password2" type="password" class="form-control" id="username" placeholder="비밀번호 확인">
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">email</label>
+                <input name="email" type="text" class="form-control" id="username" placeholder="이메일">
+            </div>
+            <div class="col-12 text-center">
+                <input type="submit" class="btn btn-success" value="complete">
+            </form>
+        </div> 
     </div> 
+</div>   
     
     {% endblock %}

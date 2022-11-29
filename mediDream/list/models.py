@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from accounts.models import MEMBERS
 from django.utils import timezone
 
@@ -14,7 +15,7 @@ class pillInfo(models.Model):
     pill_engrave=models.CharField(max_length=50)    # 각인        
 
 class search(models.Model):
-    mediDream_id=models.ForeignKey(MEMBERS,on_delete=models.PROTECT,null=True)    # 유저 아이디
-    pill=models.ForeignKey(pillInfo,on_delete=models.PROTECT,null=True)           # 약
-    date=models.DateTimeField(default=timezone.now)                     # 시간, default 설정
+    mediDream_id=models.ForeignKey(User,on_delete=models.PROTECT,null=True)  # 유저 아이디
+    pill=models.ForeignKey(pillInfo,on_delete=models.PROTECT,null=True)         # 약
+    date=models.DateTimeField(default=timezone.now)                             # 시간, default 설정
     img= models.ImageField(null=True, blank=True, upload_to='')
