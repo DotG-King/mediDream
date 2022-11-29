@@ -6,9 +6,23 @@
     </head>
 
     <body>
-        <h1>테스트 인덱스 페이지</h1>
-        
+        <h1>로그인 성공 -> 업로드 페이지</h1>
+       
         {% block content %}
         {% endblock %}
+
+        <br>
+        <br>
+        {% if request.user.is_authenticated %}
+            <p>{{ request.user.username }}님 접속중!</p>
+        {% else %}
+            <p>User is not logged in :(</p>
+        {% endif %}
+        <div>
+            <a href="/list">이전 검색약 조회</a>
+            <a href="/logout">로그아웃</a>
+        </div>
+
     </body>
+
 </html>
