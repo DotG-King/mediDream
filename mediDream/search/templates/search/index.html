@@ -4,8 +4,17 @@
     <head>
         <title>임시 페이지</title>
     </head>
+
     <body>
+        
+        <div id="header">검색 기록 창으로 가는 버튼이 들어갈 div 태그
+            <a href="{% url 'list' %}">
+                <button><h1>검색기록</h1></button>
+            </a>
+        </div>
+
         <h1>테스트 인덱스 페이지</h1>
+        
         {% block content %}
         {% endblock %}
     </body>

@@ -12,6 +12,7 @@ secret.json
 *.pyc
 __pycache__/
 local_settings.py
+*.sqlite3
 db.sqlite3
 db.sqlite3-journal
 media
