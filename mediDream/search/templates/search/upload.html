@@ -2,18 +2,11 @@
 
 {% block content %}
 
-    {% if request.user.is_authenticated %}
-            <p>User is logged in :)</p>
-            <p>Username -->  {{ request.user.username }}</p>
-        {% else %}
-            <p>User is not logged in :(</p>
-        {% endif %}
-
     <h2>이미지 업로드</h2>
 
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form }}
         <button type="submit">업로드</button>
     </form>
 
