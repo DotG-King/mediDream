@@ -4,30 +4,42 @@
     <title>user history test</title>
     <style>
         #header {
-            width:800px; margin:auto;
-            background:red;
+            width:500px;
+            background: linear-gradient(to bottom right, grey, white);
+        }
+        #search_history_container {
+            margin-left: auto; margin-right: auto;
+        }
+        #button {
+            width: auto; height: 60px;
+            background: linear-gradient(to bottom right, grey, white);
         }
     </style>
 </head>
+{% if user.is_authenticated %}
 <body>
     <p>
         <nav>
             <div id="header">검색 창으로 가는 버튼이 들어갈 div 태그
-                <button>
-                    <h1>검색 창</h1>
-                </button>
+                <a href="{% url 'upload_image' %}">
+                    <button><h1>검색 창</h1></button>
+                </a>
             </div>
         </nav>
     </p>
     <p>
         <section>
-            <div>검색 기록 표?가 들어갈 div 태그</div>
-            <div>아래의 내용이 탬플릿 언어 for문으로 반복되서 들어갈것</div>
+            <!-- <div>검색 기록 표?가 들어갈 div 태그</div>
+            <div>아래의 내용이 탬플릿 언어 for문으로 반복되서 들어갈것</div> -->
             {% for item in test%}
-                <div>
-                    <span>User = {{item.mediDream_id.username}}</span>
-                    <span><a href="/list/info/{{item.pill.pill_name}}">Pill = {{item.pill.pill_name}}</a></span>
-                    <span>Date = {{item.date}}</span>
+                <div id="search_history_container">
+                    <a href="/list/info/{{item.pill.pill_name}}">
+                        <button id="button">
+                            <span>User = {{item.mediDream_id.username}}</span>
+                            <span>Pill = {{item.pill.pill_name}}</span>
+                            <span>Date = {{item.date}}</span>
+                        </button>
+                    </a>
                 </div>
             {% endfor %}
         </section>
@@ -35,9 +47,15 @@
     <p>
         <footer>
             <div>
-                <a href="/logout">로그아웃</a>
+                <a href="{% url 'logout' %}">로그아웃</a>
             </div>
         </footer>
     </p>
 </body>
+{% else %}
+<script type="text/javascript">
+    alert('먼저 로그인을 해주세요.');
+    window.location.href = '{% url "login" %}';
+</script>
+{% endif %}
 </html>
