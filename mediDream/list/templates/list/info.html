@@ -8,15 +8,21 @@
     <div>
         {% for item in test %}
         <div>
-        <span>알약 이름 : {{ item.pill_name }}</span>
-        <span>알약 효능 : {{ item.pill_effect }}</span>
-        <span>알약 용법 : {{ item.pill_usage }}</span>
-        <span>알약 주의사항 : {{ item.pill_caution }}</span>
+        <pre>알약 이름 : {{ item.pill_name }}</pre>
+        <p></p>
+        <pre>알약 효능 : {{ item.pill_effect }}</pre>
+        <p></p>
+        <pre>알약 용법 : {{ item.pill_usage }}</pre>
+        <p></p>
+        <pre>알약 주의사항 : {{ item.pill_caution }}</pre>
+        <p></p>
         </div>
         <div>
-        <span>알약 색깔 : {{ item.pill_color }}</span>
-        <span>알약 모양 : {{ item.pill_shape }}</span>
-        <span>알약 각인 : {{ item.pill_engrave }}</span>
+        <pre>알약 색깔 : {{ item.pill_color }}</pre>
+        <p></p>
+        <pre>알약 모양 : {{ item.pill_shape }}</pre>
+        <p></p>
+        <pre>알약 각인 : {{ item.pill_engrave }}</pre>
         </div>
         {% endfor %}
     </div>
