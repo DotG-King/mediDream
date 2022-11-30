@@ -2,12 +2,25 @@
 
 {% block content %}
 
-    <h2>이미지 업로드</h2>
+    <div class="card text-center" style="width: 20rem;">
+        <img src="https://www.pharm.or.kr:442/images/sb_photo/big3/A11AKP07L016501.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
 
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">업로드</button>
-    </form>
+            <h4 class="card-title">알약 사진 업로드</h4>
+        
+            <p class="card-text">
+                1. 알약의 각인 글씨가 보이도록 촬영<br>
+                2. 사진 업로드 버튼을 사진 업로드<br>
+                3. 업로드 완료 후 알약 확인 버튼 클릭<br>
+            </p>
+            
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <button class="btn btn-success" type="submit">업로드</button>
+            </form>
+
+        </div>
+    </div>
 
 {% endblock %}
