@@ -33,7 +33,7 @@
             <div>아래의 내용이 탬플릿 언어 for문으로 반복되서 들어갈것</div> -->
             {% for item in test%}
                 <div id="search_history_container">
-                    <a href="/list/info/{{item.pill.pill_name}}">
+                    <a href="/list/info/{{item.pill.id}}">
                         <button id="button">
                             <span>User = {{item.mediDream_id.username}}</span>
                             <span>Pill = {{item.pill.pill_name}}</span>
