@@ -2,19 +2,6 @@
 <html lang="en">
 <head>
     <title>user history test</title>
-    <style>
-        #header {
-            width:500px;
-            background: linear-gradient(to bottom right, grey, white);
-        }
-        #search_history_container {
-            margin-left: auto; margin-right: auto;
-        }
-        #button {
-            width: auto; height: 60px;
-            background: linear-gradient(to bottom right, grey, white);
-        }
-    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
@@ -34,7 +21,7 @@
         <section>
             <!-- <div>검색 기록 표?가 들어갈 div 태그</div>
             <div>아래의 내용이 탬플릿 언어 for문으로 반복되서 들어갈것</div> -->
-            {% for item in test%}
+            {% for item in history%}
                 <div id="search_history_container">
                     <a href="/list/info/{{item.pill.id}}">
                         <button id="button">
