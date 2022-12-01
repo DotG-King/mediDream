@@ -1,5 +1,4 @@
 {% load static %}
-{% block contents %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,17 +13,14 @@
         }</style>
 </head>
 <body>
-    <div id="wrap">
-        <div class="center">                    
-                    {% block content %}
-                    {% endblock %}
-        </div>
+    
     <style type="text/css">
         .jumbotron {
             text-shadow: skyblue 0.2em 0.2em 0.2em;
             color: green;
         }
     </style>
+<div id="wrap">
 <div class = "jumbotron">
     <div class="container">
         <div class = "row">
@@ -56,6 +52,6 @@
         </div>
     </div>
 </div>
+</div>
 </body>
 </html>
-{% endblock %}

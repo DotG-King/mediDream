@@ -40,14 +40,4 @@ a:hover{
     color: white;
 }
 
-.jumbotron{
-    align-items:center;
-    display:flex;
-    background-image:url('mediDream\mediDream\accounts\statics\accounts\images\drug3.jpg');
-    background-size:cover;
-    background-color:#898888;
-    height:500px;
-    color:white;
-}
-
 
