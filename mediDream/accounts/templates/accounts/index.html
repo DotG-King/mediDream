@@ -31,7 +31,7 @@
     <nav class="navbar" style="background-color: white;" >
         <div class="container-fluid">
             <div class =" navbar-header">
-            <a class = "navbar-brand" href="index.html" >MediDream</a>
+            <a class = "navbar-brand" href="{% url 'index'%}" >MediDream</a>
             </div>               
                 <ul class="nav nav-tabs"> <!--네비 바 스타일-->
                     <ul class="nav justify-content-end"> <!--네비 바 오른쪽으로 가게 하는 거-->
@@ -39,13 +39,13 @@
                           <a class="nav-link active" aria-current="page" href="#">소개</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="https://www.health.kr/">약학 정보원</a>
+                          <a class="nav-link" href="{% url 'main' %}">메인</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="https://map.seoul.go.kr/smgis2/short/6NStb">폐의약품 수거함</a>
+                          <a class="nav-link" href="{% url 'upload_image' %}">검색</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://ncv.kdca.go.kr/">질병관리청</a>
+                            <a class="nav-link" href="{% url 'list' %}">기록</a>
                         </li>
                     </ul>
                 </ul>
@@ -59,8 +59,8 @@
           <div class="row text-center">
               <h1>MediDream</h1>
               <p>메디드림에 방문해주셔서 감사합니다</p>
-              <div class ="text-center"><a class ="btn btn-success" href = "{%url 'login' %}" role ="button">로그인</a>
-                <a class ="btn btn-outline-success" href = "{%url 'signup' %}" role ="button">회원가입</a></div>
+              <div class ="text-center"><a class ="btn btn-success" href = "{% url 'login' %}" role ="button">로그인</a>
+                <a class ="btn btn-outline-success" href = "{% url 'signup' %}" role ="button">회원가입</a></div>
           </div>
       </div>
   </section>
@@ -72,7 +72,7 @@
                     <div class="col-4">
                       <div class="card">
                         <div class="card-header">약학정보원</div>
-                        <img src="#" class="card-img-top" alt="...">
+                        <img src="{% static 'images/kpic2.jpg' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                           <div class="d-grid gap-2 col-6 mx-auto">
                           <a href="https://www.health.kr/" class="btn btn-success">바로가기</a>
