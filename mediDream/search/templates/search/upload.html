@@ -14,13 +14,18 @@
                 3. 업로드 완료 후 알약 확인 버튼 클릭<br>
             </p>
             <br>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <p>{{ form.as_p }} <button class="btn btn-success" type="submit">업로드</button></p>
-                
-            </form>
+            <div>
+                <form method="POST" enctype="multipart/form-data" style="margin: auto; width: 220px;">
+                    {% csrf_token %}
+                    {{ form }}
+                    <br><br>
+                    <button class="btn btn-success" type="submit">업로드</button>
+                </form>
+            </div>
 
         </div>
+
     </div>
+
 
 {% endblock %}
