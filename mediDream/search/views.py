@@ -28,8 +28,8 @@ def upload_image(request):
             predict_result=img_clf(predict.img)
             predict.pill=pillInfo.objects.get(id=predict_result)
             predict.save()
-            test=pillInfo.objects.all().filter(id=predict_result)
-            return render(request, 'list/info.html', {'test':test})
+            pill=pillInfo.objects.all().filter(id=predict_result)
+            return render(request, 'list/info.html', {'pill':pill})
 
     else:
         form = UploadForm()
