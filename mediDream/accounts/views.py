@@ -2,8 +2,9 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 
-def index(request):
-    return render(request,'accounts/index.html')
+def main(request):
+    user=request.user
+    return render(request,'accounts/main.html', {'user':user})
 
 #회원가입
 def signup(request):
@@ -26,7 +27,7 @@ def login(request) :
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:   
             auth.login(request,user)
-            return redirect('upload_image') #로그인이 성공하면 search.urls로 넘어감
+            return redirect('main') #로그인이 성공하면 search.urls로 넘어감
             
         else:
             return render(request, 'accounts/login.html', {'error':'아이디 or 비밀번호 오류입니다'}) #에러코드 출력하면서 login 페이지 보여줌
@@ -38,6 +39,3 @@ def login(request) :
 def logout(request):
     auth.logout(request)
     return redirect('login') #로그아웃하면 최초 페이지로 돌아감
-
-
-
