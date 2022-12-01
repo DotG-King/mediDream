@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 
 def index(request):
-    return render(request,'accounts/index.html', {})
+    return render(request,'accounts/index.html')
 
 #회원가입
 def signup(request):
