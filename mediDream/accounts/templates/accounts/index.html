@@ -30,15 +30,12 @@
     <nav class="navbar" style="background-color: white;" >
         <div class="container-fluid">
             <div class =" navbar-header">
-            <a class = "navbar-brand" href="{% url 'index'%}" >MediDream</a>
+            <a class = "navbar-brand" href="{% url 'main'%}" >MediDream</a>
             </div>               
                 <ul class="nav nav-tabs"> <!--네비 바 스타일-->
                     <ul class="nav justify-content-end"> <!--네비 바 오른쪽으로 가게 하는 거-->
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">소개</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{% url 'main' %}">메인</a>
+                          <a class="nav-link active" href="{% url 'main' %}">메인</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="{% url 'upload_image' %}">검색</a>
