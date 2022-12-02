@@ -36,7 +36,7 @@ def login(request) :
         else:
             count=count+1
             err_msg='아이디 or 비밀번호 '+str(count)+'회 오류입니다.'
-            if (count >= LOGIN_TRY_LIMIT) :
+            if (count%LOGIN_TRY_LIMIT == 0) :
                 return render(request, 'accounts/login.html', {'error': '3분간 로그인을 금지합니다.', 'count':count})
             return render(request, 'accounts/login.html', {'error':err_msg}) #에러코드 출력하면서 login 페이지 보여줌
     else:
