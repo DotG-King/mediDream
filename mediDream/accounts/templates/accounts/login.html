@@ -1,4 +1,91 @@
 {% load static %}
+
+{% if count >= 5 %}
+<script type="text/javascript">
+    var time=180;
+    var min="";
+    var sec="";
+
+    var x = setInterval(function() {
+        min=parseInt(time/60);
+        sec=time%60;
+
+        document.getElementById("timer").innerHTML=min+"분 "+sec+"초 남았습니다.";
+        time--;
+
+        if (time<0) {
+            clearInterval(x);
+            location.href="{% url 'login' %}";
+        }
+    }, 1000)
+    alert('3분간 로그인을 금지합니다.');
+</script>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device=width" , initial-scale="1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Medidream</title>
+    <style>
+        #wrap {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <style type="text/css">
+        .jumbotron {
+            color: green;
+        }
+    </style>
+    <div id="wrap">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Medidream 로그인</h>
+                            <br></br>
+                    </div>
+                    <div class="col-12 text-center">
+                        {{error}}
+                        <h5 id="timer"></h5>
+                    </div>
+                    <!-- <div class="container">
+                        <div class="row mt-5">
+                            <div class="col-12 text-center">
+                                <div class="col-12">
+                                    <form method="POST" , action=".">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="username" class="form-label">ID</label>
+                                            <input type="text" class="form-control" id="username" placeholder="사용자 이름" name="username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password" class="form-label">password</label>
+                                            <input type="password" class="form-control" id="password" placeholder="비밀번호" name="password">
+                                        </div>
+                                        <button type="submit" class="btn btn-success">login</button>
+                                        <a href="{%url 'signup' %}"> <button type="button" class="btn btn-outline-success">signup</button> </a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="{% static '/js/bootstrap.js' %}"></script>
+</body>
+
+</html>
+{% else %}
 <html lang="ko">
 
 <head>
@@ -61,7 +148,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="{% static '/js/bootstrap.js' %}"></script>
-
 </body>
 
 </html>
+{% endif %}
