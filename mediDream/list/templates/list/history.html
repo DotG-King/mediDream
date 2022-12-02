@@ -45,11 +45,20 @@
         </div>
     </nav>
     <hr>
+    <div class="container-fluid"> 
+        <div class="row">
+            <div class="col-sm-12">
+                <a button type="button" class="btn-close " style="float: right;" 
+                aria-label="Close" href="{% url 'main'%}"></a></button>   
+            </div>
+        </div>
+    </div>
     <div id="wrap">
         <div class="col">
             <!-- <div>검색 기록 표?가 들어갈 div 태그</div>
             <div>아래의 내용이 탬플릿 언어 for문으로 반복되서 들어갈것</div> -->
             {% for item in history%}
+            </div>        
             <div class="card mb-2" style="max-width:600px;">
                 <div class="row g-0">
                     <div class="col-md-6">
