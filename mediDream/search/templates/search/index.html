@@ -10,10 +10,10 @@
             #wrap {
                 display: grid;
                 place-items: center;
-                min-height: 100vh;
+                min-height: 80vh;
             }
-            </style>
-        </head>
+        </style>
+    </head>
 
     <body>
         <nav class="navbar" style="background-color:  #e0e0e0;" >
@@ -24,17 +24,16 @@
                     <ul class="nav nav-tabs"> <!--네비 바 스타일-->
                         <ul class="nav justify-content-end"> <!--네비 바 오른쪽으로 가게 하는 거-->
                             <li class="nav-item">
-                              <a class="nav-link" href="{% url 'main' %}">메인</a>
+                                <a class="nav-link" href="{% url 'main' %}">메인</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link active" href="{% url 'upload_image' %}">검색</a>
+                                <a class="nav-link active" href="{% url 'upload_image' %}">검색</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'list' %}">기록</a>
                             </li>
                         </ul>
                     </ul>
-                </div>
             </div>
         </nav>
         <hr>
@@ -47,6 +46,7 @@
             </div>
         </div>
         <div id="wrap">
+
         <div class="center">
                              
                     {% block content %}
@@ -67,9 +67,24 @@
                 window.location.href = '{% url "login" %}';
             </script>
             {% endif %}    
+
         </div>
 
-    </div>
-    </body>
+        <footer style=" background-color: rgb(38, 38, 82); color: black">
+            <div class="container">
+                <br>
+                <div class="row">
+                    <div class="col-sm-12" style="text-align: center;">
+                        <a href="{% url 'logout' %}">로그아웃</a>
+                        <h6>Copyright &copy; 2022</h6>이약이조 <a href="https://github.com/DotG-King/mediDream" class="link-primary">Git 바로가기</a>
+                    </div>
+                    <div class="col-sm-12" style="text-align: center;">
+                        <p>이 사이트는 이약이조의 프로젝트 사이트 입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
+    </body>
+    
 </html>
