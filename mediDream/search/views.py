@@ -1,6 +1,4 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-
+from django.shortcuts import render
 from .forms import UploadForm
 from list.models import search,pillInfo
 from django.contrib.auth.models import User
@@ -13,9 +11,6 @@ from .predict import img_clf
 
 def index(request):
     return render(request,'search/index.html', {})
-
-def image_list(request):
-    return render(request,'search/list.html', {})
 
 def upload_image(request):
     if request.method == 'POST':
