@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <nav class="navbar" style="background-color: white;" >
+        <nav class="navbar" style="background-color:  #e0e0e0;" >
             <div class="container-fluid">
                 <div class =" navbar-header">
                 <a class = "navbar-brand" href="{% url 'main'%}" >MediDream</a>
@@ -46,10 +46,28 @@
             </div>
         </div>
         <div id="wrap">
-            <div class="center">             
-                {% block content %}
-                {% endblock %}
-            </div>
+
+        <div class="center">
+                             
+                    {% block content %}
+                    {% endblock %}
+
+        </div>
+        <div>
+            <a href="{% url 'list' %}">
+                <button class="btn btn-primary">이전 검색약 조회</button>
+            </a>
+            <br>
+            <br>
+            {% if request.user.is_authenticated %}
+                <p>{{ request.user.username }}님 접속중! <a href="/logout">로그아웃</a></p>
+            {% else %}
+            <script type="text/javascript">
+                alert('먼저 로그인을 해주세요.');
+                window.location.href = '{% url "login" %}';
+            </script>
+            {% endif %}    
+
         </div>
 
         <footer style=" background-color: rgb(38, 38, 82); color: black">
