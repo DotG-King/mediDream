@@ -23,23 +23,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
-    <nav class="navbar" style="background-color: #e0e0e0;">
+    <nav class="navbar" style="background-color: #0d47a1;">
         <div class="container-fluid">
             <div class=" navbar-header">
-                <a class="navbar-brand" href="{% url 'main'%}">MediDream</a>
+                <input type="image" src="{% static '/images/mediDream.png' %}" 
+                href="{% url 'main'%}"  height="40" width="200"/> 
             </div>
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-pills">
                 <!--네비 바 스타일-->
                 <ul class="nav justify-content-end">
                     <!--네비 바 오른쪽으로 가게 하는 거-->
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'main' %}">메인</a>
+                        <a class="nav-link" style="color: black;" href="{% url 'main' %}">메인</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'upload_image' %}">검색</a>
+                        <a class="nav-link" style="color: black;" href="{% url 'upload_image' %}">검색</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'list' %}">기록</a>
+                        <a class="nav-link active" style="color: white;" href="{% url 'list' %}">기록</a>
                     </li>
                 </ul>
             </ul>
