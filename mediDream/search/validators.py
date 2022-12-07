@@ -7,8 +7,9 @@ def validate_file(value):
     valid_extensions = ['.jpg','.jpeg']
 
     if filesize > 10485760:
-        raise ValidationError("업로드 가능 최대 용량은 10MB 입니다!")
+        raise ValidationError("10MB 초과 이미지는 업로드 불가합니다")
+        
     else:
         if not ext in valid_extensions:
-            raise ValidationError('업로드 가능 확장자는 .jpg .jpeg 입니다!')
+            raise ValidationError('.jpg .jpeg 이외 이미지는 업로드 불가합니다')
         return value
