@@ -10,32 +10,36 @@
     <title>Medidream</title>
     <style>
         #wrap {
+            background-image: url('{% static "/images/bg.jpg" %}');
+            background-size: cover;
             display: grid;
             place-items: center;
             min-height: 100vh;
+        }
+        .container {
+            padding: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgb(252, 177, 65);
+    
+        }
+        #button{
+        width:100px;
+        margin:auto;
+        display:block;
         }
     </style>
 </head>
 
 <body>
-    <style type="text/css">
-        .jumbotron {
-            color: black;
-        }
-    </style>
     <div id="wrap">
-        <div class="jumbotron">
+        
             <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center">
-                        <h3>MediDream 회원가입</h>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row mt-5">
-                    <div class="col-12 text-center">
-                        <div class="col-12"> 
+                    <div class="col-12">
+                        <h3>MediDream 회원가입</h3>
                             <form method="POST" action="{%url 'signup'%}">
                                 {% csrf_token %}
                                 <div class="form-group">
@@ -56,13 +60,13 @@
                                     <label for="email" class="form-label">email</label>
                                     <input name="email" type="text" class="form-control" id="username" placeholder="이메일">
                                 </div>
-                                <input type="submit" class="btn btn-primary" value="회원가입">
+                                <input type="submit" id="button" class="btn btn-warning" value="회원가입">
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        
     </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="{% static '/js/bootstrap.js' %}"></script>

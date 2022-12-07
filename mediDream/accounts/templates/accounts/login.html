@@ -19,32 +19,28 @@
         .page-container {
             background-image: url('{% static "/images/bg.jpg" %}');
             background-size: cover;
-            width: 100vw;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
-        .login-form-left-side {
-            width: 50%;
+        .login-left{
+            padding: 20px;
             display: flex;
             flex-direction: column;
+            justify-content: flex-end	;
             align-items: center;
-            padding: 50px;
-            color: black;
         }
 
-        .login-form-right-side {
-
-            border-radius: 10px 0px 0px 10px;
-            padding: 50px;
+        .login-right {
+            padding: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: black;
+            color: rgb(252, 177, 65);
         }
+    div.c {font-size: 500%;}
     </style>
 </head>
 
@@ -71,59 +67,58 @@
 
 <body>
     <div class="page-container">
-        <div class="login-form-container shadow">
-            <div class="login-form-right-side">
-                <div class="login-top-wrap"></div>
+        <div class="login-left">
+            <div style="color: rgb(252, 177, 65);">
+                <div class="c"><b>Find your pills.</b></div>
+                <br>
+                <br>
                 <div style="color: white;">
-                    <h1>healthy Life!</h1>
-                    <br>
-                    <br>
-                    <h4>의약품 검색 서비스</h4>
+                    <h3>의약품 검색 서비스</h3>
                     <p>불편했던 의약품 검색, 메디드림에서 손쉽게 확인하세요!<br>
-
-                        의료계 종사자 분들과 의약품 정보가 필요하신 분들께 무료로 제공됩니다.<br>
-                        집에 있는 내 의약품, 리스트도 만들 수 있어요!</p>
+                    의료계 종사자 분들과 의약품 정보가 필요하신 분들께 무료로 제공됩니다.<br>
+                    집에 있는 내 의약품, 리스트도 만들 수 있어요!</p>
+                    <br>
+                    <br>
+                    <p>의료계 종사자 분들과 의약품 정보가 필요하신 분들에게 무료로 제공되는 사이트 입니다.</p>
                 </div>
             </div>
         </div>
-        <div class="login-form-left-side">
-            <div class="jumbotron">
-                <div class="col-text-center">
-                    <h4>MediDream</h4>
+        
+        <div class="login-right">
+            <div class="col-text-center">
+                    <h2><b>MediDream</b></h2>
                     {{error}}
                     <h5 id="timer"></h5>
-                </div>
-            </div>
+            </div> 
         </div>
     </div>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <!-- <script src="{% static '/js/bootstrap.js' %}"></script> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </body>
-
 </html>
 
 {% else %}
 <body>
     <div class="page-container">
-        <div class="login-form-container shadow">
-            <div class="login-form-right-side">
-                <div class="login-top-wrap"></div>
+        <div class="login-left">
+            <div style="color: rgb(252, 177, 65);">
+                <div class="c"><b>Find your pills.</b></div>
+                <br>
+                <br>
                 <div style="color: white;">
-                    <h1>healthy Life!</h1>
-                    <br>
-                    <br>
-                    <h4>의약품 검색 서비스</h4>
+                    <h3>의약품 검색 서비스</h3>
                     <p>불편했던 의약품 검색, 메디드림에서 손쉽게 확인하세요!<br>
-
-                        의료계 종사자 분들과 의약품 정보가 필요하신 분들께 무료로 제공됩니다.<br>
-                        집에 있는 내 의약품, 리스트도 만들 수 있어요!</p>
+                    의료계 종사자 분들과 의약품 정보가 필요하신 분들께 무료로 제공됩니다.<br>
+                    집에 있는 내 의약품, 리스트도 만들 수 있어요!</p>
+                    <br>
+                    <br>
+                    <p>의료계 종사자 분들과 의약품 정보가 필요하신 분들에게 무료로 제공되는 사이트 입니다.</p>
                 </div>
             </div>
         </div>
-        <div class="login-form-left-side">
-            <div class="jumbotron">
-                <div class="col-text-center">
-                    <h4>MediDream</h4>
+        
+        <div class="login-right">
+            <div class="col-text-center">
+                    <h2><b>MediDream</b></h2>
                     {{error}}
                     <br></br>
                     <form method="POST" , action=".">
@@ -137,17 +132,15 @@
                             <input type="password" class="form-control" id="password" placeholder="비밀번호"
                                 name="password">
                         </div>
-                        <button type="submit" class="btn btn-primary">로그인</button>
+                        <button type="submit" class="btn btn-warning">로그인</button>
                         <a href="{%url 'signup' %}"> <button type="button"
-                                class="btn btn-outline-primary">회원가입</button></a>
+                                class="btn btn-outline-warning">회원가입</button></a>
                     </form>
-                </div>
             </div>
         </div>
     </div>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <!-- <script src="{% static '/js/bootstrap.js' %}"></script> -->
 </body>
-
 </html>
 {% endif %}
