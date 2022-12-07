@@ -13,7 +13,7 @@
         #wrap {
             display: grid;
             place-items: center;
-            min-height: 80vh;
+            min-height: 75vh;
         }
 
         .container {
@@ -42,6 +42,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color: white;"  href="{% url 'list' %}">기록</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: white;"  href="https://forms.gle/yu7eXpAtMjjWexVd8">문의사항</a>
                     </li>
                 </ul>
             </ul>
@@ -73,9 +76,9 @@
             <br>
             <div class="row">
                 <div class="col-sm-12" style="text-align: center;">
-                    <a href="{% url 'logout' %}">로그아웃</a>
-                    <p>이약이조 <a href="https://github.com/DotG-King/mediDream" class="link">Git 바로가기</a></p>
+                    <p><a href="{% url 'logout' %}">로그아웃</a></p>
                     <p>이 사이트는 이약이조의 프로젝트 사이트 입니다.</p>
+                    <p><a href="https://github.com/DotG-King/mediDream" class="link">메디드림 Github 바로가기</a></p>
                 </div>
             </div>
         </div>
@@ -83,3 +86,4 @@
 </body>
 
 </html>
+
