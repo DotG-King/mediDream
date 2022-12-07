@@ -4,9 +4,9 @@
 {% block content %}
 
 <div class="card text-center" style="width: 20rem;">
-    <img src="{% static '/images/free-icon-pill-2197067.png' %}" class="card-img-top" alt="...">        
+    <img src="{% static '/images/free-icon-pill-2197067.png' %}" class="card-img-top">        
     <div class="card-body">
-        <h4 class="card-title">알약 사진을 찍어주세요!</h4>
+        <h4 class="card-title">알약 사진을 찍어주세요</h4>
         <p>앞 뒤 모두 글자가 있는 경우,<br>
         한 쪽면만 찍으시면 됩니다</p>
 
@@ -20,11 +20,11 @@
             <form method="POST" enctype="multipart/form-data" style="margin: auto; width: 220px;">
                 {% csrf_token %}
                 {{ form }}
-                <br><br>
-                <button class="btn btn-primary" type="submit">업로드</button>
+                <br>
             </form>
-        </div>
+        </div>        
     </div>
+    <button class="btn btn-primary" type="submit">업로드</button>
 </div>
 
 {% endblock %}
