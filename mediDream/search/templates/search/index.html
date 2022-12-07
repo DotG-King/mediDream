@@ -10,11 +10,11 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <style>
-        #wrap {
+        /* #wrap {
             display: grid;
             place-items: center;
             min-height: 75vh;
-        }
+        } */
 
         .container {
             width: 100%;
@@ -27,8 +27,7 @@
     <nav class="navbar" style="background-color:#0d47a1;">
         <div class="container-fluid">
             <div class=" navbar-header">
-                <input type="image" src="{% static '/images/mediDream.png' %}" 
-                href="{% url 'main'%}"  height="40" width="200"/> 
+                <input type="image" src="{% static '/images/mediDream.png' %}" href="{% url 'main' %}"  height="40" width="200"/> 
             </div>
             <ul class="nav nav-pills">
                 <!--네비 바 스타일-->
@@ -54,24 +53,38 @@
     <hr>
     
     {% if request.user.is_authenticated %}
-    <div id="wrap">
-        <div class="center">
-            <div style="text-align : center;"><img src="{% static '/images/warn.png' %}" width=100 height=100></div>
-            <p><b>
-                현재, 서비스 준비 중으로 6종의 알약만 구분가능합니다.<br>
-                또한 업로드된 사진의 품질에 따라 정확도가 달라질 수 있습니다.<br>
-                <br>
-                약 복용 전, 반드시 지시사항을 확인해주세요.<br>
-                약 복용에 따른 부작용에 대해서는 책임지지 않습니다.<br>
-                새로운 약을 복용한 후 가려움, 부종, 피부 발진, 호흡 곤란 등의
-                <br>이상반응이 나타난 경우 복용을 중지하고 의사, 약사와 상의해야합니다. 
-                </b>
-            </p>
+    
+    <div class="center">
+        <div style="text-align : center;">
+            <br><br>
+            <img src="{% static '/images/warn.png' %}" width=100 height=100>                
         </div>
-        <div class="center">
-            {% block content %}
-            {% endblock %}
-        </div>
+    </div>
+
+    <div class="center" style="margin: auto; width: 550px;">      
+        <p>
+            <b>현재, 서비스 준비 중으로 6종의 알약만 구분가능합니다.<br>
+            또한 업로드된 사진의 품질에 따라 정확도가 달라질 수 있습니다.<br></b>
+        </p>                
+    </div>
+    
+    <div style="margin: auto; width: 700px;">
+        <br>
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+    <div class="center" style="margin: auto; width: 550px;">
+        <p>
+            <b>
+            <br>
+            약 복용 전, 반드시 지시사항을 확인해주세요.<br>
+            약 복용에 따른 부작용에 대해서는 책임지지 않습니다.<br>
+            새로운 약을 복용한 후 가려움, 부종, 피부 발진, 호흡 곤란 등의
+            <br>이상반응이 나타난 경우 복용을 중지하고 의사, 약사와 상의해야합니다.<br><br>
+            </b>
+        </p>
+        <br><br>
     </div>
 
     {% else %}

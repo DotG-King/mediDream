@@ -3,28 +3,27 @@
 
 {% block content %}
 
-<div class="card text-center" style="width: 20rem;">
-    <img src="{% static '/images/free-icon-pill-2197067.png' %}" class="card-img-top">        
-    <div class="card-body">
-        <h4 class="card-title">알약 사진을 찍어주세요</h4>
-        <p>앞 뒤 모두 글자가 있는 경우,<br>
-        한 쪽면만 찍으시면 됩니다</p>
 
-        <br>
-        <p class="card-text">
-            1. 알약의 각인 글자가 보이도록 촬영<br>
-            2. 사진 업로드 버튼 누르기<br>
-        </p>
-        <br>
-        <div>
-            <form method="POST" enctype="multipart/form-data" style="margin: auto; width: 220px;">
-                {% csrf_token %}
-                {{ form }}
-                <br>
-            </form>
-        </div>        
+<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col p-4 d-flex flex-column position-static">
+        <img src="{% static '/images/free-icon-pill-2197067.png' %}" width=300 height=300>
     </div>
-    <button class="btn btn-primary" type="submit">업로드</button>
+    <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-4 text-primary">알약 사진을 찍어주세요</strong>
+        <p class="card-text mb-auto">
+        앞 뒤 모두 글자가 있는 경우,<br>
+        한 쪽면만 찍으시면 됩니다<br><br>
+        1. 알약의 각인 글자가 보이도록 촬영<br>
+        2. 사진 업로드 버튼 누르기
+        </p>
+        <form method="POST" enctype="multipart/form-data" style="margin: auto; width: 220px;">
+            {% csrf_token %}
+            {{ form }}<br><br>
+        </form>
+    </div>
+<button class="btn btn-primary" type="submit">업로드</button>        
 </div>
+
+
 
 {% endblock %}
