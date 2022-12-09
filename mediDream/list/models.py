@@ -10,7 +10,7 @@ from django.utils import timezone
 
 def date_upload_to(instance, filename):
   # upload_to="%Y/%m/%d" 처럼 날짜로 세분화
-  ymd_path = timezone.now().strftime('%Y/%m/%d') 
+  ymd_path = timezone.localtime().strftime('%Y/%m/%d') 
   # 길이 32 인 uuid 값
   uuid_name = uuid4().hex
   # 확장자 추출
